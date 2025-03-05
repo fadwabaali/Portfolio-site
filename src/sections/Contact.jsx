@@ -78,7 +78,7 @@ const Contact = () => {
             life, I’m here to help.
           </p>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
+          <form ref={formRef} action="https://formcarry.com/s/WliWlZ6LRDR" method="POST" enctype="multipart/form-data" className="mt-12 flex flex-col space-y-7">
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
               <input
