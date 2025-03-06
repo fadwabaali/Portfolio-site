@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 
 import useAlert from '../hooks/useAlert.js';
@@ -16,53 +16,53 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: 'Fadwa Aitbaali',
-          from_email: form.email,
-          to_email: 'aitbaalifadwa41@gmail.com',
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: 'Thank you for your message 😃',
-            type: 'success',
-          });
+  //   emailjs
+  //     .send(
+  //       import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+  //       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+  //       {
+  //         from_name: form.name,
+  //         to_name: 'Fadwa Aitbaali',
+  //         from_email: form.email,
+  //         to_email: 'aitbaalifadwa41@gmail.com',
+  //         message: form.message,
+  //       },
+  //       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+  //     )
+  //     .then(
+  //       () => {
+  //         setLoading(false);
+  //         showAlert({
+  //           show: true,
+  //           text: 'Thank you for your message 😃',
+  //           type: 'success',
+  //         });
 
-          setTimeout(() => {
-            hideAlert(false);
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+  //         setTimeout(() => {
+  //           hideAlert(false);
+  //           setForm({
+  //             name: '',
+  //             email: '',
+  //             message: '',
+  //           });
+  //         }, [3000]);
+  //       },
+  //       (error) => {
+  //         setLoading(false);
+  //         console.error(error);
 
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: 'danger',
-          });
-        },
-      );
-  };
+  //         showAlert({
+  //           show: true,
+  //           text: "I didn't receive your message 😢",
+  //           type: 'danger',
+  //         });
+  //       },
+  //     );
+  // };
 
   return (
     <section className="c-space my-20" id="contact">

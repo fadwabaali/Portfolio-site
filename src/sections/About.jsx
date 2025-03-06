@@ -16,7 +16,7 @@ const About = () => {
   };
 
   return (
-    <section className="c-space my-20" id="about">
+    <section className="c-space my-[10rem]" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
@@ -57,13 +57,15 @@ const About = () => {
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
+                labelsData={[{ lat: 33.5731, lng: -7.5898, text: 'Casablanca, Morocco', color: 'white', size: 100}]}
               />
             </div>
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
               <p className="grid-subtext">I&apos;m based in Casablanca, Morocco and open to remote work worldwide.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <a href="#contact">
+                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              </a>
             </div>
           </div>
         </div>
